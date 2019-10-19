@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<?xml-stylesheet type="text/xsl" href="mystyle.xsl"?>
+<student>
+	<semester5>
+		<cn>50</cn>
+		<wtl>60</wtl>
+		<os>70</os>
+		<soad>80</soad>
+		<mp>90</mp>
+	</semester5>
+</student>
+
+

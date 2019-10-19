@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<script language="javascript">
+			function describe(){
+				var agent=navigator.userAgent.toLowerCase();
+				var result=agent.length;
+				var result=agent.indexOf("msie");
+
+				document.writeln("<h1> your browser is  </h1>");
+				document.writeln("<p>" + agent +  "</p>");	
+
+				if(result == -1){
+					document.write("<p> it was not made by microsoft </p>");
+
+				}
+				else{
+					document.write("<p> it was not made by microsoft </p>");
+				}
+
+				document.close();
+								
+			}
+		</script>
+	</head>
+	<body onLoad="describe()">
+
+	</body>
+
+
+</html>

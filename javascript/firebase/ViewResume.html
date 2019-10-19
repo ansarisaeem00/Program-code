@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Curriculum Vitae</title>
+
+<meta name="viewport" content="width=device-width"/>
+<meta name="description" content="The Curriculum Vitae of Joe Bloggs."/>
+<meta charset="UTF-8"> 
+ 	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+ <script>
+   // Initialize Firebase
+   var config = {
+      apiKey: "AIzaSyAr-fo4q8U-b4fOKsdcMZHv3pxF641SnmI",
+      authDomain: "cclpresentation.firebaseapp.com",
+      databaseURL: "https://cclpresentation.firebaseio.com",
+      projectId: "cclpresentation",
+      storageBucket: "cclpresentation.appspot.com",
+      messagingSenderId: "22510849040"
+    };
+
+   firebase.initializeApp(config);
+ </script>
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body id="top">
+<div id="cv" class="instaFade">
+	<div class="mainDetails">
+		
+		<div class="name">
+			<h1 class="quickFade delayTwo"><span id="name"></h1>
+		</div>
+		
+		<div id="contactDetails" class="quickFade delayFour">
+			<ul>
+				<li><span id="email"></a></li>
+				<li><span id="phone"></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div id="mainArea" class="quickFade delayFive">
+		<section>
+			<article>
+				<div class="sectionTitle">
+					<h1>Personal Profile</h1>
+				</div>
+				
+				<div class="sectionContent">
+					<h5> Name : <span id="full_name"> </span> </h5>
+					<h5> Father's Name : <span id="FatherName"> </span> </h5>					
+					<h5> Mother's Name : <span id="MotherName"> </span> </h5>		
+					<h5> Gender : <span id="Gender"> </span> </h5>		
+					<h5> Nationality : <span id="Nationality"> </span> </h5>		
+					<h5> Marital Status : <span id="Marital"> </span> </h5>		
+					<h5> Language Know : <span id="Lang"> </span> </h5>		
+					
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Education</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article>
+					<h2>Graduation</h2>
+					<p class="subDetails">College Name :<span id="College"></span></p>
+					<p class="subDetails">Completion Year :<span id="Complition"></span></p>
+					<p class="subDetails">University :<span id="University"></span></p>
+					
+				</article>
+				<hr>
+
+				<article>
+					<h2>Matric</h2>
+					<p class="subDetails">College Name :<span id="HscCollege"></span></p>
+					<p class="subDetails">Completion Year :<span id="HscComplition"></span></p>
+					<p class="subDetails">Board :<span id="HscUniversity"></span></p>
+					
+				</article>
+				<hr>
+
+				<article>
+					<h2>Pre Matric</h2>
+					<p class="subDetails">School Name :<span id="SscCollege"></span></p>
+					<p class="subDetails">Completion Year :<span id="SscComplition"></span></p>
+					<p class="subDetails">Board :<span id="SscUniversity"></span></p>
+					
+				</article>
+				<hr>
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Technical Skills</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article>
+					<h3>Programming Language : <span class="subDetails" id="programming"></span></h2>
+					
+				</article>
+				
+				<article>
+					<h3>Web :<span class="subDetails" id="web"> </span> </h2>
+				</article>
+		
+				<article>
+					<h3>Tools :<span class="subDetails" id="Tools"> </h2>
+				</article>
+
+				<article>
+					<h3>OS :<span class="subDetails" id="OS"></h2>
+				</article>
+
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+	</div>
+</div>
+<script>
+
+	var USN=localStorage.getItem("USN");
+	//var USN = document.cookie;
+	console.log(USN);
+
+
+	var db = firebase.database();
+    var ref = db.ref('Resume').orderByChild('usn').equalTo(USN);
+    ref.once('value', snapshot => {
+        if (snapshot.exists()) {
+            var name = snapshot.val();
+            name = Object.values(name);
+            email = name[0].Email;
+            F_name = name[0].full_name;
+            Add = name[0].Address;
+            Career = name[0].CareerObjective;
+            Complition = name[0].Completion;
+            FatherName = name[0].FatherName;
+            Gender = name[0].Gender;
+            HscCollege = name[0].HscCollege;
+            HscComplition = name[0].HscCompletion;
+            HscUniversity = name[0].HscUniversity;
+            Institute = name[0].Institution;
+            Marital = name[0].Marital;
+            MotherName = name[0].MotherName;
+            Nationality = name[0].Nationality;
+            SscBoard = name[0].SscBoard;
+            SscComplition = name[0].SscCompletion;
+            SscSchool = name[0].SscSchool;
+            University = name[0].University;
+            Lang = name[0].lang;
+            os = name[0].os;
+            programming = name[0].programming;
+            tools = name[0].tools;
+            web = name[0].web;
+          
+
+
+            $('#name').text(F_name);
+            $('#full_name').text(F_name);
+            $('#email').text(email);
+            $('#FatherName').text(FatherName);
+            $('#MotherName').text(MotherName);
+            $('#Gender').text(Gender);
+            $('#Nationality').text(Nationality);
+            $('#Marital').text(Marital);
+            $('#Lang').text(Lang);
+            $('#College').text(Institute);
+            $('#University').text(University);
+            $('#Complition').text(Complition);
+
+            $('#HscCollege').text(HscCollege);
+            $('#HscUniversity').text(HscUniversity);
+            $('#HscComplition').text(HscComplition);
+
+            $('#SscCollege').text(SscSchool);
+            $('#SscUniversity').text(SscBoard);
+            $('#SscComplition').text(SscComplition);
+
+            $('#OS').text(os);
+            $('#web').text(web);
+            $('#Tools').text(tools);
+            $('#programming').text(programming);
+
+
+
+            
+            console.log('User email : ' + email + ' User name: '+ USN);
+        }
+        else {
+              console.log('There is no user who has email like ')
+           }
+    })
+
+
+
+
+</script>
+
+
+</body>
+</html>

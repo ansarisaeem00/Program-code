@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+</head>
+<body>
+
+	<form action="fetch.html" method="post">
+		<label>Email:</label>
+		<input type="text" id="email">
+		<input type="submit" value="next">
+
+	</form>
+
+<script>
+	var email = document.getElementById('email').value;
+	localStorage.setItem("firstname", email);
+</script>
+
+</body>
+</html>

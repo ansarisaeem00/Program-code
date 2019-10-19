@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Resume</title>
+	<link rel="stylesheet" type="text/css" href="css/resumeform.css" media="all">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyAr-fo4q8U-b4fOKsdcMZHv3pxF641SnmI",
+	    authDomain: "cclpresentation.firebaseapp.com",
+	    databaseURL: "https://cclpresentation.firebaseio.com",
+	    projectId: "cclpresentation",
+	    storageBucket: "cclpresentation.appspot.com",
+	    messagingSenderId: "22510849040"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+</head>
+<body>
+	<div id="form_container">
+		<form id="resumeform" class="resume" method="post">
+			<div id="formdescription">
+				<h1><br>Anjuman islam Kalsekar Technical Campus,New panvel<br><br></h1>
+				<h2><br>Training & Placement Cell</h2>
+				<h4>Resume Builder</h4><hr>
+			</div>
+			<ol>
+			<div class="center">
+			
+				<li id="fullname">
+				<h3>Name</h3>
+						
+					<label>USN*</label>
+					<input type="text" id="usn" name="usn" placeholder="USN" size="50" maxlength="12" value=""/>
+
+					<br>
+					<p>As Per your College ID</p><br>
+					
+					<label>Full Name*</label>
+					<input type="text" id="fullName" name="fullname" placeholder="First+Last" size="50" maxlength="60"value=""/>
+					
+					<br>
+					<p>As Per your College ID</p>
+						
+
+
+
+				</li><br>
+
+						<input type="button" value="save" onclick="save();" />
+
+			</div>
+		</ol>
+	</form>
+</div>
+
+
+<script>
+	
+var databaseRef = firebase.database().ref('users/');
+
+  function save_user(){
+   var Usn = document.getElementById('usn').value;
+   var FullName = document.getElementById('fullName').value;
+  
+   var uid = firebase.database().ref().child('users').push().key;
+   
+   var data = {
+    user_id: uid,
+    usn_id : Usn,
+    full_name: FullName
+   }
+   
+   var updates = {};
+   updates['/users/' + uid] = data;
+   firebase.database().ref().update(updates);
+   
+   alert('The user is created successfully!');
+   reload_page();
+  }
+
+</script>
+
+
+</body>
+</html>

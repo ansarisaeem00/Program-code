@@ -1,0 +1,135 @@
+	/* CSS Selector - Element*/ 
+		body
+		{
+			position: solid	;
+			margin: 5px;
+			padding: 5px;
+			height: auto;
+			max-width: 1280px;
+			max-height: 600px;
+
+		}
+		h1,h2,h3,h4,h5,h6
+		{
+			color: cyan;
+		}
+		nav
+		{
+			background-color: cyan;			
+			line-height: 35px;
+			width: auto;
+
+		}
+		nav ul li
+		{
+			display: inline;
+			list-style: none;
+			padding-right: 15px;
+		}
+
+		nav> ul li a
+		{ 
+			text-decoration: none;
+			color: darkblue;
+		}
+		input[type=text]
+		{
+			background-color: cyan;
+			width: 100px;
+		}
+		input[type=radio]
+		{
+			width: 30px;
+		}
+
+		.button
+		{
+			background-color: cyan;
+			color: white;
+			margin: 20px;
+			width: 200px;
+			height: 40px;
+		}
+		p
+		{ 	text-align : left; }
+
+		table, tr
+		{
+			background-color : cyan;
+			border: 2px solid black;
+			font-size: 14px;
+			color: white;
+		}
+		td
+		{
+			text-align: center;
+			border: 1px dotted cyan;
+		}
+		label
+		{
+			color: cyan;
+			padding: 20px;
+		}
+
+	/* CSS Selector - ID */ 
+
+	#para1 
+		{ 	text-align : center; }
+
+	#header
+		{
+			background-color: cyan;					
+		}
+	#content
+		{	
+			
+			margin: 2px;
+			padding: 2px;			
+			border: 2px solid cyan;
+			height: auto;
+		}
+	#leftcolumn
+	{
+			position: absolute;
+			float: left;
+			padding: 5px;
+			width: 160px;
+			height: auto;	
+			font-size: 14px;
+	}
+
+	#leftcolumn ul, li, a
+	{
+		list-style-type: none;		
+		text-decoration: none;
+	}
+
+	#rightcolumn
+		{			
+			margin-left: 205px;
+					
+		}
+
+	#footer
+		{
+			position: relative;
+			font: italic bold 12px/30px Georgia, serif;
+			margin: 2px;
+			padding: 2px;
+			text-align: right;
+			color: cyan;
+		}
+
+		.headerlogo
+		{
+			color: darkblue;
+			margin-left: 30px;
+		}
+
+		.large
+		{
+			font-size: 40px;
+			font-style: italic;
+		}
+		.center
+		{ 	text-align : center; }

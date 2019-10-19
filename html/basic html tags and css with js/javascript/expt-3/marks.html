@@ -1,0 +1,122 @@
+<html>
+	<head>
+		<title>MARKSHEET</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body bgcolor=black>
+
+
+							<!-- first table for taking input -->
+		<table align="center" id=tab>
+				<caption><strong>MARKS-SHEET</strong></caption><br><br>
+				<tr>
+					<td>OS:</td>
+					<td><input type="text" name="os" id="os"></td>
+				</tr>	
+				<tr>
+					<td>MP:</td>
+					<td><input type="text" name="mp" id="mp"></td>
+				</tr>
+				<tr>	
+					<td>CN:</td>
+					<td><input type="text" name="cn" id="cn"></td>
+				</tr>
+				<tr>
+					<td>SOOAD:</td>
+					<td><input type="text" name="sooad" id="sooad"></td>	
+				</tr>
+				<tr>
+					<td>WTL:</td>
+					<td><input type="text" name="wtl" id="wtl"></td>
+				</tr>
+		</table>
+
+
+
+		<!--- BUtton -->
+		<p align="Center">
+			<button type="button" onclick ="calculate()" id="but">Calculate</button>
+		</p>
+		<br>
+		<hr>
+
+
+								<!-- second table for output -->
+		<h3>MARKS ENTERED ARE:</h3>
+		<table id="tab" align="center">
+				<caption>MARKS-SHEET</caption><br><br>
+				<tr>
+					<td>OS:</td>
+					<td><h4 id="demo3"></h2></td>
+				</tr>	
+				<tr>
+					<td>MP:</td>
+					<td><h4 id="demo4"></h4></td>
+				</tr>
+				<tr>	
+					<td>CN:</td>
+					<td><h4 id="demo5"></h4></td>
+				</tr>
+				<tr>
+					<td>SOOAD:</td>
+					<td><h4 id="demo6"></h4></td>	
+				</tr>
+				<tr>
+					<td>WTL:</td>
+					<td><h4 id="demo7"></h4></td>
+				</tr>
+				<tr>
+					<td>TOTAl:</td>
+					<td><h4 id="demo10"></h4></td>
+				</tr>
+				<tr>
+					<td>AVERAGE:</td>
+					<td><h4 id="demo8"></h4></td>
+				</tr>
+				<tr>
+					<td>PERCENTAGE</td>
+					<td><h4 id="demo9"></h4></td>
+				</tr>
+		</table>
+
+
+
+		<script type="text/javascript">
+		function calculate()
+	{
+	var os, mp, cn, sooad, wtl, total, cpga, percent;
+
+	os =parseInt(document.getElementById('os').value);
+	mp =parseInt(document.getElementById('mp').value);
+	cn =parseInt(document.getElementById('cn').value);
+	sooad =parseInt(document.getElementById('sooad').value);
+	wtl =parseInt(document.getElementById('wtl').value);
+
+
+	document.getElementById("demo3").innerHTML =os;
+
+	document.getElementById("demo4").innerHTML =mp;
+
+	document.getElementById("demo5").innerHTML =cn;
+
+	document.getElementById("demo6").innerHTML =sooad;
+
+	document.getElementById("demo7").innerHTML =wtl;
+
+	total = os + mp + cn + sooad + wtl;
+	document.getElementById("demo10").innerHTML =total;
+
+	cgpa = total/5;
+
+	document.getElementById("demo8").innerHTML =cgpa;
+
+	percent = (total/500) * 100;
+
+	document.getElementById("demo9").innerHTML =percent;
+
+	}
+		</script>
+
+	</body>
+
+</html>

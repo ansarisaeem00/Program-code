@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<script language="javascript">
+			function describe(){
+				var major=parseInt(navigator.appVersion);
+				var minor=parseFloat(navigator.appVersion);
+				var agent=navigator.userAgent.toLowerCase();
+				document.write("<h1> Details in popup  </h1>");
+				document.close();
+				window.alert(agent + "" + major);
+				
+			}
+			function farwell(){
+				window.alert("farwell and Thanks for visiting");
+
+
+			}
+
+		</script>
+	</head>
+	<body onLoad="describe()" onUnload="farewell()" >
+
+	</body>
+
+
+</html>

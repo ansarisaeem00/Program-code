@@ -1,0 +1,46 @@
+<html>
+	<body>
+		<script type="text/javascript">
+			popup("hrllo");
+			document.writeln("ARRAY OPERATIONS");
+
+			var a=["M","Saeem","Ansari","Saleem"];
+			var b=new Array("M","Saeem","Ansari","Saleem");
+			document.writeln("<p>");
+
+			document.writeln(a.join(","));
+			document.writeln("<br>");	
+			document.writeln(b.join(","));
+			document.writeln("<br>");
+
+
+			a.pop();
+			document.write(a.join(","));
+			document.write("<br>");
+
+			a.push("THIS,is,push");
+			document.writeln(a.join(","));
+			document.writeln("<br>");
+
+			b.reverse();
+			document.writeln(b.join(","));
+			document.writeln("<br>");
+
+			a.shift();
+			document.writeln(a.join(","));
+			document.writeln("<br>");
+
+			document.writeln("</p>");
+			document.writeln("<br>");
+
+			b.unshift("this","is","unshift");
+			document.writeln(b.join(","));
+			document.writeln("<br>");
+
+			b.slice("saleem","saeem");
+			document.writeln(b.join(","));
+			document.writeln("<br>");
+
+		</script>	
+	</body>
+</html>

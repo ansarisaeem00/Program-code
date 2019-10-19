@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Read Data</title>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+ <script>
+   // Initialize Firebase
+   var config = {
+      apiKey: "AIzaSyAr-fo4q8U-b4fOKsdcMZHv3pxF641SnmI",
+      authDomain: "cclpresentation.firebaseapp.com",
+      databaseURL: "https://cclpresentation.firebaseio.com",
+      projectId: "cclpresentation",
+      storageBucket: "cclpresentation.appspot.com",
+      messagingSenderId: "22510849040"
+    };
+
+   firebase.initializeApp(config);
+ </script>
+</head>
+<body>
+
+<h1 id="NAme"></h1>
+<h2 id="E_mail"></h2>
+<script>
+
+	var USN=localStorage.getItem("USN");
+	document.getElementById('E_mail').innerHTML = USN;
+
+	var db = firebase.database();
+    var ref = db.ref('Resume').orderByChild('Email').equalTo(USN);
+    ref.once('value', snapshot => {
+        if (snapshot.exists()) {
+            var name = snapshot.val();
+            name = Object.values(name);
+            email = name[0].Email;
+            name = name[0].full_name;
+            $('#NAme').text(name);
+            console.log(E_mail);
+            console.log('User email : ' + email + ' User name: '+ name );
+        }
+        else {
+              console.log('There is no user who has email like ')
+           }
+    })
+
+
+</script>
+
+
+</body>
+</html>

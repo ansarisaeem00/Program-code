@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inbox>
+<note id="101">
+	<from>
+		Abdul Salam
+	</from>
+	<to>
+		Amer Syed
+	</to>
+	<date>
+		03/08/17
+	</date>
+	<place>
+		New Panvel
+	</place>
+	<message>
+		Welcome to my blog
+	</message>
+
+</note>
+
+<note id="102">
+	<from>
+		Abdul Salam
+	</from>
+	<to>
+		Amer Syed
+	</to>
+	<date>
+		03/08/17
+	</date>
+	<place>
+		New Panvel
+	</place>
+	<message>
+		Welcome to my blog
+	</message>
+
+</note>
+</inbox>

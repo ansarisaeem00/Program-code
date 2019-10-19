@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>FORM VALIDATION</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body bgcolor=black>
+	  <div id="div1" align=center>		
+		<form id="form1">
+			USERNAME:<INPUT TYPE="text" id="email">
+			<br/><br/><hr color=cyan>
+			PASSWORD:<INPUT TYPE="password" id="pass">
+			<br/><br/><hr color=cyan>
+			<p align="center">
+				<button id="but" onClick="validateForm">SUBMIT</button>
+		 	</p>		
+		</form>	
+	   </div>
+
+	   <!-- javascript code-->
+	<script type="text/javascript">
+    function validateForm() {
+        var un = document.form1.email.value;
+        var pw = document.form1.pass.value;
+        var username = "username"; 
+        var password = "password";
+        if ((un == username) && (pw == password)) {
+            alert ("Login was successful,");
+            return false;
+        }
+        else {
+            alert ("Login was unsuccessful, please check your username and password");
+        }
+      }
+	</body>	
+</html>

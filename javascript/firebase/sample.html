@@ -1,0 +1,258 @@
+<html>
+<head>
+ <title>Resume Buider</title>
+ <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+ <link rel="stylesheet" type="text/css" href="css/resumeform.css" media="all">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+ <script>
+   // Initialize Firebase
+   var config = {
+      apiKey: "AIzaSyAr-fo4q8U-b4fOKsdcMZHv3pxF641SnmI",
+      authDomain: "cclpresentation.firebaseapp.com",
+      databaseURL: "https://cclpresentation.firebaseio.com",
+      projectId: "cclpresentation",
+      storageBucket: "cclpresentation.appspot.com",
+      messagingSenderId: "22510849040"
+    };
+
+   firebase.initializeApp(config);
+ </script>
+</head>
+<body>
+
+
+  <div id="form_container">
+    <form id="resumeform" class="resume" method="post" action="ViewResume.html">
+      <div id="formdescription">
+        <h1>Resume Builder</h1><hr>
+      </div>
+      <ol>
+      <div class="center">
+      
+        <li id="fullname">
+        <h3>Name</h3>
+            
+          <label>USN*</label>
+          <input type="text" id="usn" name="usn" placeholder="USN" size="50" maxlength="12" value=""/>
+
+          <br>
+          <p>As Per your College ID</p><br>
+          
+          <label>Full Name*</label>
+          <input type="text" id="fullName" name="fullname" placeholder="First+Last" size="50" maxlength="60"value=""/>
+          
+          <br>
+          <p>As Per your College ID</p>
+        </li><br>
+
+
+        <li class="contactdetails">
+          <h3>Contact Details</h3>
+              <label>Mobile No *:</label>
+                <input type="number" id="phoneNo" name="mobile" placeholder="10 digit Number" size="50" maxlength="10" value=""/><br>
+                <p>Enter your 10 digit mobile number(excluding +91)</p>
+              <br>
+              <label>Email ID*:</label>
+              <span>
+                <input type="email" id="email" name="email" placeholder="e.g. mvit@sirmvit.edu" size="50" maxlength="150" value=""/><br>
+                <p>Enter your email id</p>
+              </span><br>
+              <label>Address :</label>
+              <span>
+                <textarea placeholder="Enter your address including house no and landmark" id="AddRess">
+                </textarea>
+              </span>        
+
+        <li class="careerobjective">
+          <h3>Career Objective</h3><br>
+            <textarea id="CareerObjective" name="careerobjective" maxlength="5000" value=""></textarea>
+            <p>Give your career objective in few words</p>
+        </li><br>
+
+          <div class="data">
+              <label>Institution Name*</label>
+              <input type="text" id="Institution" name="becollege" size="30" maxlength="250" value=""/><br>
+              <p>Enter the college name in which you are studying</p><br>
+            
+              <label>University Name*</label>
+              <input type="text" id="University" name="beuniversity" size="30" maxlength="250" value=""/><br>
+              <p>Enter the university to which your college is affiliated</p> <br>
+              
+              <label>Year of Completion</label>
+              <input type="number" id="Completion" name="beyear" size="30" maxlength="4" value=""/><br>
+              <p>Expected Year of Completion</p><hr>
+          </div>
+
+        <h5>PUC/ Class 12 *:</h5>
+        <div class="data">    
+              <label>Institution Name*</label>
+              <input type="text" id="HscCollege" name="pucollege" size="30" maxlength="250" value=""/><br>
+              <p>Enter the college name in which you studied Class 12</p><br>
+              <label>University Name*</label>
+              <input type="text" id="HscUniversity" name="puuniversity" size="30" maxlength="250" value=""/><br>
+              <p>Enter the university/board to which your Pre-University college is affiliated</p>     
+              <label>Year of Completion</label>
+              <input type="number" id="HscCompletion" name="puyear" size="30" maxlength="4" value=""/><br>
+              <p>Year of Completion</p>
+            </span><br><hr>
+          </div>  
+            <h5>SSLC/ 10th *:</h5>
+            <span>            
+          <div class="data">
+              <label>Institution Name*</label>
+              <input type="text" name="school" id="SscSchool" size="30" maxlength="250" value=""/>
+              <p>Enter the college name in which you studied Class 10</p><br>
+              
+              <label>University/Board Name*</label>
+              <input type="text" name="schoolboard" id="SscBoard" size="30" maxlength="250" value=""/>
+              <p>Enter the university/board to which your Class 10 is affiliated</p>
+              
+              
+              <label>Year of Completion</label>
+              <input type="number" name="sslcyear" id="SscCompletion" size="30" maxlength="4" value=""/><br>
+              <p>Year of Completion</p>
+            </span> 
+          </div>
+        </li><br>
+
+
+
+        <li id="technicalexperience">
+        <h3>Technical Experience</h3>
+        <li id="technicalskills">
+        <div class="technicalskills">
+          <label>Programming languages</label>
+          <input type="text" id="Programming" name="programming" maxlength="1500" value=""/><br>
+          <p>Programming Languages in which you are proficient</p>
+          <label>Web Technologies</label>
+          <input type="text" id="web" name="web" maxlength="1500" value=""/><br>
+          <p>Web Technologies in which you are proficient</p>
+          <label>Tools & Frameworks</label>
+          <input type="text" id="tools" name="tools" maxlength="1500" value=""/><br>
+          <p>Tools & Frameworks in which you are proficient</p>
+          <label>Operating Systems</label>
+          <input type="text" name="os" id="os" maxlength="1500" value=""/><br>
+          <p>Operating Systems in which you are proficient</p>
+        </div>
+        </li>
+<li id="personaldetails">
+        <h3>Personal Details</h3>
+          <h5>Personal Details</h5>
+          <div class="data">
+          <label>Father's Name</label>
+            <input type="text" id="fatherName" name="fathersname" size="30" maxlength="50" value=""/><br>
+            <p>Enter Your Father's Name</p><br>
+          <label>Mother's Name</label>
+            <input type="text" name="mothersname" id="motherName" size="30" maxlength="50" value=""/><br>
+            <p>Enter Your Mother's Name</p><br>
+          </div>
+          <label>Gender</label>
+          <div class="gender">
+            <input type="radio" id="gender" name="gender" value="Male"/>
+            <label>Male</label><br>
+            <input type="radio" id="gender" name="gender" value="Female"/>
+            <label>Female</label><br><br>
+          </div>
+          <div class="data">
+            <label>Nationality</label>
+            <input type="text" id="Nationality" name="nationality" size="30" maxlength="50" value=""/><br>
+            <p>citizen of?</p>
+            
+            <label>Marital Status</label>
+            <input type="text" id="maritalStatus" name="maritalstatus" size="30" maxlength="50" value=""/><br>
+            <p>Single/Married/...</p>
+            
+            <label>Languages Known</label>
+            <input type="text" name="languagesknown" id="languagesKnown" size="30" maxlength="1000" value=""/><br>
+            <p>languages in which you are proficient</p>
+          </div>
+        </li><br>
+        
+
+
+
+            <input type="submit" value="save" onclick="save();" />
+
+      </div>
+    </ol>
+  </form>
+</div>
+
+ <script>
+  var usn = document.getElementById('usn').value;
+  localStorage.setItem("USN", usn);
+  //document.cookie = "USN = usn";
+
+  function save(){
+    var lang = document.getElementById('languagesKnown').value;
+    var Nationality = document.getElementById('Nationality').value;
+    var MaritalStatus = document.getElementById('maritalStatus').value;
+    var Gender = document.getElementById('gender').value;
+    var Mother = document.getElementById('motherName').value;
+    var Father = document.getElementById('fatherName').value;
+    var os = document.getElementById('os').value;
+    var Tools = document.getElementById('tools').value;
+    var Web = document.getElementById('web').value;
+    var programming = document.getElementById('Programming').value;
+    var SscSchool = document.getElementById('SscSchool').value;
+    var SscBoard = document.getElementById('SscBoard').value;
+    var SscCompletion = document.getElementById('SscCompletion').value; 
+
+    var HscCompletion = document.getElementById('HscCompletion').value;
+    var HscUniversity = document.getElementById('HscUniversity').value;
+    var HscCollege_up = document.getElementById('HscCollege').value;
+    
+    var full_name = document.getElementById('fullName').value;
+    var Usn = document.getElementById('usn').value;
+    var PhoneNO = document.getElementById('phoneNo').value; 
+    var Email = document.getElementById('email').value;
+    var Add = document.getElementById('AddRess').value;
+    var Career = document.getElementById('CareerObjective').value;
+    var Institution = document.getElementById('Institution').value;
+    var University =  document.getElementById('University').value;
+    var Completion = document.getElementById('Completion').value;
+
+   var uid = firebase.database().ref().child('Resume').push().key;
+   
+   var data = {
+    user_id: uid,
+    usn:Usn,  
+    full_name: full_name,
+    phoneNo:phoneNo,
+    Email:Email,
+    Address :Add,
+    CareerObjective : Career,
+    Institution : Institution,
+    University : University,
+    Completion : Completion,
+
+    HscCollege :HscCollege_up,
+    HscUniversity:HscUniversity,
+    HscCompletion :HscCompletion,
+    SscSchool:SscSchool,
+    SscBoard:SscBoard,
+    SscCompletion:SscCompletion,
+    programming:programming,
+    web : Web,
+    tools:Tools,
+    os :os,
+    FatherName:Father,
+    MotherName : Mother,
+    Gender : Gender,
+    Nationality :Nationality,
+    Marital :MaritalStatus,
+    lang : lang
+   }
+   
+   var updates = {};
+   updates['/Resume/' + uid] = data;
+   firebase.database().ref().update(updates);
+   
+   alert('Now your can view your Resume');
+  }
+  
+  
+ </script>
+ 
+</body>
+</html>
