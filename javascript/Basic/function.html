@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Functions</title>
+</head>
+<body>
+	<h1 id ="showDate"></h1>
+	<button onclick="myDate()" > Get Date </button>
+
+	<h3>Addition of two numbers</h3>
+	<input type="text" name="n1">
+	<input type="text" name="n2">
+	<h3 id="result" ></h3>
+	<button onclick="add(10,80)">Addition</button>
+
+	<script>
+		function myDate()
+		{
+			document.getElementById("showDate").innerHTML = Date();
+		}
+
+		function add()
+		{
+			var n1 = document.getElementById("n1");
+			var n2 = document.getElementById("n2");	
+			var result = n1.value + n2.value;
+			document.getElementById("result").innerHTML = result;				
+		}
+
+		function add(a,b) //method overloading
+		{
+			result = a + b;
+			document.getElementById("result").innerHTML = result;				
+		}
+
+
+	</script>
+
+</body>
+</html>

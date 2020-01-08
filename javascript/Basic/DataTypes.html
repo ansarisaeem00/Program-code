@@ -1,0 +1,53 @@
+<!--Program to Understand Data Types in js
+	I am not good in naming the variables, please bear with me
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data Types</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td><h1 id="number"></h1></td>
+			<td><h1 id="numberType"></h1></td>
+		</tr>
+		<tr>
+			<td><h1 id="double"></h1></td>
+			<td><h1 id="doubleType"></h1></td>
+		</tr>		
+		<tr>
+			<td><h1 id="string"></h1></td>
+			<td><h1 id="stringType"></h1></td>
+		</tr>
+		<tr>
+			<td><h1 id="boolean"></h1></td>
+			<td><h1 id="booleanType"></h1></td>
+		</tr>
+		<tr>
+			<td><h1 id="q"></h1></td>
+			<td><h1 id="qType"></h1></td>
+		</tr>
+	</table>
+
+<script> 
+	var x = 6;
+	var d = 5.5;
+	var y = "Hello World";
+	var z = true;
+	var q = x + y
+	document.getElementById("number").innerHTML = x;
+		document.getElementById("numberType").innerHTML = typeof x;	
+	document.getElementById("string").innerHTML = y;
+		document.getElementById("stringType").innerHTML = typeof y;
+	document.getElementById("boolean").innerHTML = z;	
+		document.getElementById("booleanType").innerHTML = typeof z;
+	document.getElementById("double").innerHTML = d;
+		document.getElementById("doubleType").innerHTML = typeof d;
+	document.getElementById("q").innerHTML = q;
+		document.getElementById("qType").innerHTML = typeof q;					
+</script>
+
+</body>
+</html>

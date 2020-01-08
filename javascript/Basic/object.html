@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>object</title>
+</head>
+<body>
+
+<h2 id="output"></h2>
+<h2 id="output2"></h2>
+<h1 id ="car"></h1>
+<h1 id = "person"></h1>
+
+	<script>
+		var car = {
+			company:"maruti",
+			model:"swift",
+			yom:"2012"
+		};
+		document.getElementById("car").innerHTML = JSON.stringify(car);
+		document.getElementById("output").innerHTML = car.model;
+		document.getElementById("output2").innerHTML = car["model"];
+		console.table(car)
+
+		//object function
+		var person = {
+			  firstName: "John",
+			  lastName : "Doe",
+			  id       : 5566,
+			  fullName : function() { //anonimous function
+			    return this.firstName + " " + this.lastName;
+			  }
+			};
+		document.getElementById("person").innerHTML = person.fullName();
+
+	</script>
+
+</body>
+</html>

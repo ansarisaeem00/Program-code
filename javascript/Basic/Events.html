@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events</title>
+</head>
+<body onload="changeBg()">
+
+	<h2 id="output"></h2>
+	<button onclick="myDate()" > Get Date </button>
+
+
+
+	<p id="myP" onmousedown="mouseDown()" onmouseup="mouseUp()">
+	Click the text! The mouseDown() function is triggered when the mouse button is pressed down over this paragraph, and sets the color of the text to red. The mouseUp() function is triggered when the mouse button is released, and sets the color of the text to green.
+	</p>
+
+	<h1 id="mouseover" onmouseover="ChangeColor(this)" onmouseout="mycolor()">Mouse Over Effect</h1>
+	<h1 id="mouseover2">Mouse Over Effect using listners</h1>
+
+	<script>
+		//Adding listners
+
+		document.getElementById("mouseover2").addEventListener("mouseover", ChangeColor2);
+		document.getElementById("mouseover2").addEventListener("mouseout", mycolor2);
+
+
+		function myDate(){
+			 document.getElementById("output").innerHTML = Date();
+			
+		}
+
+		function mouseDown() {
+		  document.getElementById("myP").style.color = "red";
+		}
+
+		function mouseUp() {
+		  document.getElementById("myP").style.color = "green";
+		}
+
+		function ChangeColor(x) {
+			x.style.color = "yellow";
+
+		}
+		
+		function ChangeColor2() {
+			document.getElementById("mouseover2").style.color = "lime";
+			
+		}
+
+		function mycolor(){
+			document.getElementById("mouseover").style.color = "black";
+		}
+
+		function mycolor2(){
+			document.getElementById("mouseover2").style.color = "black";
+		}
+
+		function changeBg() {
+			document.body.style.background = 'cyan';
+		}
+
+
+
+	</script>
+
+</body>
+</html>

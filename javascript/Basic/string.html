@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>string</title>
+</head>
+<body>
+
+<h2 id="output"></h2>
+<h2 id="output2"></h2>
+<h2 id="output3"></h2>
+<h2 id="output4"></h2>
+<h2 id="output5"></h2>
+<h2 id="output6"></h2>
+<h2 id="output7"></h2>
+<h2 id="output8"></h2>
+<h2 id="output9"></h2>
+<h2 id="output10"></h2>
+
+<h2 id="length"></h2>
+
+<script>
+	var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	var len = txt.length;
+	document.getElementById("length").innerHTML= "length of " + txt + " string is " + len;
+	console.log(len);
+
+
+	var str = "Please locate where 'locate' occurs ";
+	var index = str.indexOf("locate");
+	var lastIndex = str.lastIndexOf("locate");
+	var search = str.search("locate");
+
+	document.getElementById("output").innerHTML="\"locate\" occurs in the sentence \"" + str + "\" at" + index;
+	document.getElementById("output2").innerHTML= "last index of \"locate\" is " + lastIndex;
+	document.getElementById("output3").innerHTML= "search found at " + search;
+
+
+
+
+	var str = "Apple, Banana, Kiwi";
+	var res = str.slice(7, 13);
+	document.getElementById("output4").innerHTML= res;
+
+
+	var text1 = "Hello World!";     
+	var text2 = text1.toUpperCase();
+	var ext = text1.charAt(2);
+	document.getElementById("output5").innerHTML= text2;
+	document.getElementById("output6").innerHTML= ext;
+
+
+	//Convert String into array :
+	var txt = "a,b,c,d,e";   // String
+	var arr1 = txt.split(",");          // Split on commas
+	var arr2 = txt.split(" ");          // Split on spaces
+	var arr3 = txt.split("|"); 			// Split on pipes
+
+	document.getElementById("output7").innerHTML = txt[1]; // give undefined
+	document.getElementById("output8").innerHTML = arr1[1]; 
+	document.getElementById("output9").innerHTML = arr3;
+</script>
+
+</body>
+</html>

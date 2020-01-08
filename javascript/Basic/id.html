@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GEt By ID</title>
+</head>
+<body id ="color" onload="mycolor()">
+	<h1 id="name"></h1>
+	<h1 id ="car"></h1>
+	<button onclick="myDate()" > Get Date </button>
+	<script>
+		function myDate(){
+			 document.getElementById("name").innerHTML = Date();
+			
+	}
+	var car = {type:"Fiat", model:"500", color:"white"};
+	document.getElementById("car").innerHTML = car.type + car.model;
+
+	function mycolor(){
+		document.body.style.background = 'yellow';
+	}
+	</script>
+</body>
+</html>
