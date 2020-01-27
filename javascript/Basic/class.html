@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>object</title>
+</head>
+<body>
+
+<h2 id="output"></h2>
+
+<script>
+	class Car {					//class
+	  constructor(brand) {		//constructor
+	    this.carname = brand;
+	  }
+		present() {				//method
+			return "I have a " + this.carname;
+	  }
+	}
+
+	mycar = new Car("Ford");		//Creating object of class and calling constructor
+	document.getElementById("output").innerHTML = mycar.present();
+	mycar = new Car("MAruti");
+	document.getElementById("output").innerHTML = mycar.present();
+	
+
+
+</script>
+
+</body>
+</html>
