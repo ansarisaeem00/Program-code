@@ -188,6 +188,8 @@
 //-----------------------------
 $("#btnSave2" ).click(function() {
             if($("#txtType").val() == 'N'){
+           	$("#txtType").val("N");
+            $("#txtKey").val("0");
                 database.ref('users').once("value").then(function(snapshot) {
                     if(snapshot.numChildren()==0){
                         nextkey = 1;
